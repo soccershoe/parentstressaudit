@@ -22,11 +22,10 @@ The $\mathbf{PSI_{Score}}$ is calculated by summing eight distinct, weighted str
 
 $$\mathbf{PSI_{Score}} = \mathbf{F_S} + \mathbf{F_C} + \mathbf{F_O} + \mathbf{F_J} + \mathbf{F_D} + \mathbf{F_K} + \mathbf{F_G} + \mathbf{F_E}$$
 
-Factor Breakdown
-
-|
+### Factor Breakdown
 
 | Factor | Description | Calculation Formula | Source Justification |
+|--------|-------------|-------------------|---------------------|
 | $\mathbf{F_S}$ (Sleep Debt) | Stress from inadequate nightly sleep. | $$ \max(0, 7.5 - \text{SleepHours}) \times 10 $$ | Weighting: Penalizes hours below the recommended 7.5 hours, as sleep deprivation compounds all other stressors (Source: Sleep Foundation). |
 | $\mathbf{F_C}$ (Commute Strain) | Stress from weekly time lost to long commutes. | $$ \max\left(0, \frac{\text{TotalWeeklyCommuteMinutes} - \text{Days} \times 60}{\text{Days} \times 60}\right) \times 20 $$ | Weighting: Highly weighted (x20) as long commutes (over 60 min RT/day) are strongly linked to high stress and anxiety (Source: Urban Institute/ADP). |
 | $\mathbf{F_O}$ (Obligation Load) | Stress from non-core commitments (side gigs, volunteering, extra hobbies). | $$ \max(0, \text{ObligationHours} - 3) \times 4 $$ | Weighting: Penalizes time spent weekly on commitments above a reasonable baseline (3 hours), representing a depletion of personal recovery time. |
